@@ -10,7 +10,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // TODO: auto-discover proto files
     builder.compile(
-        &[
+        &[ 
             "src/proto/admin_rpc.proto",
             "src/proto/blocks.proto",
             "src/proto/rpc.proto",

@@ -19,10 +19,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             "src/proto/hub_event.proto",
             "src/proto/username_proof.proto",
             "src/proto/sync_trie.proto",
-            "src/proto/node_state.proto",
-        ],
-        &["src/proto"],
-    )?;
+            ""src/proto/node_state.proto",
+    ];
+
+    // Added logging for errors during .proto compilation
+    if let Err(e) = builder.compile(&proto_files, &["src/proto"]) {
+        eprintln!("Failed to compile proto files: {:?}", e);
+        return Err(e.into());
+    }
 
     Ok(())
 }

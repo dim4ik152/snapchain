@@ -22,7 +22,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             "src/proto/node_state.proto",
         ],
         &["src/proto"],
-    )?;
+    )?
 
     Ok(())
 }
